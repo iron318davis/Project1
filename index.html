@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css"/>
-  
-    <title>Recipe Now!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="./script.js"></script>
+  <title>Recipe Now!</title>
 </head>
+
 <body>
 
-<!--PEUDOCODE
+  <!--PEUDOCODE
 
 Layout
 Background: White
@@ -20,58 +25,49 @@ Header: Recipe Now!
 -->
 
 
-<div class="grid-container" id="grid1">
+  <div class="grid-container" id="grid1">
     <div style="text-align:center">
       <div class="grid-x grid-padding-x">
         <div class="medium-12 cell">
 
 
           <h1>Recipe Now!</h1>
-<br>
+          <br>
 
-<div class="searchDiv">
-  <form>
-    <input id="searchinput" type="text" placeholder="What do you want to eat?">
-  </form>
-        <button id="searchbutton" type="button" class="alert button">Search</button>
-    </div>
+          <div class="searchDiv">
+            <form>
+              <input id="searchinput" type="text" placeholder="What do you want to eat?">
+            </form>
+            <button id="searchbutton" type="button" class="alert button">Search</button>
+          </div>
+        </div>
       </div>
     </div>
-</div>
 
-<div class ="recipeCard">
-<br>
-<div class="card" style="width: 300px;">
-    <div class="card-divider">
-      This is a header
+    <div class="recipeCard">
+      <br>
+      <div class="card" style="width: 300px;">
+        <div class="card-divider">
+          This is a header
+        </div>
+        <img class="cardimg" data-src="#">
+        <div class="card-section">
+          <p class="card-text">It has an easy to override visual style, and is appropriately subdued.</p>
+        </div>
+      </div>
     </div>
-    <img src="assets/img/generic/rectangle-1.jpg">
-    <div class="card-section">
-      <h4>This is a card.</h4>
-      <p>It has an easy to override visual style, and is appropriately subdued.</p>
-    </div>
+
+    <div class="recipeArea"></div>
+
+    <!-- this is the div container end tag-->
   </div>
-</div>
 
 
-<div class="recipeArea">
-<p>Hello, this is the recipe wills sit.
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
 
-<br><br><br><br><br><br><br><br><br><br><br>
 
-Hello again.
 
-<br><br><br><br><br><br><br><br><br><br><br>
-</p>
-</div>
-
-<!-- this is the div container end tag-->
-</div>
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-
-    
 </body>
+
 </html>
