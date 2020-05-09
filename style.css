@@ -1,5 +1,30 @@
+body{
+  background:rgb(173, 173, 173);
+}
+
+
 h1 {
     color: rgb(255, 136, 0);
     text-align: center;
     font-weight: bold;
   }
+
+  .card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.grid-container {
+  background: white;
+}
+
+.searchDiv {
+  padding-top: 80px;
+  padding-bottom:100px;
+}
+
+
+
