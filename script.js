@@ -27,13 +27,13 @@ $(document).ready(function () {
 
 
       for (var i = 9; i <= 28; i++) {
-        console.log(values[i]);
-
+        console.log(values[i], typeof values[i]);
+        if (values[i] !== null) {
         var ingr = $("<div>");
         ingr.append(values[i + 20]);
         ingr.append(" " + values[i]);
         $(".recipeArea").append(ingr);
-      };
+        };
       
       var recipeHead2 = $("<div>")
       var instructions = values[5];
