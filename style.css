@@ -52,4 +52,11 @@ div.card-divider {
 }
 
 
+.hide {
+  display: none;
+}
+
+.title {
+  font-weight: bold;
+}
 

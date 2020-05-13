@@ -1,18 +1,41 @@
 $(document).ready(function () {
   var responsearray = []
 
+  document.querySelector('#searchinput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      // code for enter
+      e.preventDefault();
+      searchthestuff();
+    }
+  });
+
   $(document).on("click", "#searchbutton", function () {
     event.preventDefault();
-    var searchitem = $("#searchinput").val().trim()
-    var searchurl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchitem
+    searchthestuff();
+  });
 
+
+  function searchthestuff() {
+
+    var searchitem = $("#searchinput").val().trim();
+    var keyurl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchitem;
+    var randomurl = "https://www.themealdb.com/api/json/v1/1/random.php";
+
+    if (searchitem !== "") {
+      searchurl = keyurl;
+    } else {
+      searchurl = randomurl;
+    }
 
     $.ajax({
       url: searchurl,
       method: "GET",
-    }).then(function(response) {
+    }).then(function (response) {
       console.log(response);
       responsearray = response.meals[0];
+
+      $(".recipeArea").empty();
+
 
       responsearray = Object.keys(responsearray).map(k => responsearray[k] = typeof responsearray[k] == 'string' ? responsearray[k].trim() : responsearray[k]);
 
@@ -20,7 +43,7 @@ $(document).ready(function () {
       var values = Object.values(responsearray);
 
 
-      var recipeHead = $("<div>")
+      var recipeHead = $("<div class = \"title\">")
       var recipeTitle = values[1];
       recipeHead.append(recipeTitle);
       $(".recipeArea").append(recipeHead);
@@ -33,8 +56,15 @@ $(document).ready(function () {
         ingr.append(values[i + 20]);
         ingr.append(" " + values[i]);
         $(".recipeArea").append(ingr);
+
+      };
+
+      $(".recipeArea").append("<br/>")
+
+
         };
       
+
       var recipeHead2 = $("<div>")
       var instructions = values[5];
       recipeHead2.append(instructions);
@@ -42,9 +72,9 @@ $(document).ready(function () {
 
 
 
-      //   After we get response, we need to get the strSource value
+      //After we get response, we need to get the strSource value
       var source = response.meals[0].strSource
-      var linkpreviewurl = "http://api.linkpreview.net/?key=b5fa775953864f47208ee525813905ac&q=" + source
+      var linkpreviewurl = "http://api.linkpreview.net/?key=8a0afb71ec5cc1099caf9ba77f806aa8&q=" + source
 
       if (source !== null) {
         $.ajax({
@@ -52,31 +82,45 @@ $(document).ready(function () {
           method: "GET",
         }).then(function (response) {
 
+          //$(".recipeCard").classList.remove("hide");
+          $('.recipeCard').removeClass('hide');
 
-          $(".card-divider").text(response.title);
+          if (response.title !== null) {
+            $(".card-divider").text(response.title);
+          } else {
+            $(".card-divider").text("");
+          }
 
-          $(".card-text").text(response.description);
+          if (response.description !== null) {
+            $(".card-text").text(response.description);
+          } else {
+            $(".card-text").text("");
+          }
 
-         
           var cardimg = response.image;
-          $(".cardimg").attr("src", cardimg);
+
+          if (response.image !== null) {
+            $(".cardimg").attr("src", cardimg);
+          } else {
+            $(".cardimg").attr("src", "");
+          }
 
           var sourceURL = response.url;
-          $(".card-link").attr("href", sourceURL);
-  
+
+          if (response.url !== null) {
+            $(".card-link").attr("href", sourceURL);
+          } else {
+            $(".card-link").attr("href", "#")
+          }
+
 
         });
       } else {
-        console.log("No Source found for linkpreview API")
-          ;
-      }
-      ;
+        console.log("No Source found for linkpreview API");
+        $('.recipeCard').addClass('hide');
+      };
     });
-
-
-
-
-  });
+  };
 
 
 
@@ -88,3 +132,6 @@ $(document).ready(function () {
 
 // Davis API key for linkpreview API
 // b5fa775953864f47208ee525813905ac
+
+// Tom API key for linkpreview API
+// 8a0afb71ec5cc1099caf9ba77f806aa8
