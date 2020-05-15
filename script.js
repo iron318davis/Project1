@@ -81,6 +81,7 @@ $(document).ready(function () {
 
       //After we get response, we need to get the strSource value
       var source = response.meals[0].strSource;
+
       var linkpreviewurl = "https://api.linkpreview.net/?key=8a0afb71ec5cc1099caf9ba77f806aa8&q=" + source;
 
       if (source !== null) {
