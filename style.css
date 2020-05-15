@@ -55,8 +55,15 @@ div.recipeCard {
 }
 
 .recipeArea {
-  margin-left:75px;
+  margin-left: 75px;
   margin-right: 75px;
+
+.hide {
+  display: none;
+}
+
+.title {
+  font-weight: bold;
 }
 
 
