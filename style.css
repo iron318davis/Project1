@@ -54,6 +54,9 @@ div.recipeCard {
   font-size: 25px;
 }
 
+.recipeArea {
+  margin-left: 75px;
+  margin-right: 75px;
 
 .hide {
   display: none;
