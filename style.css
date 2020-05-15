@@ -34,6 +34,10 @@ h1 {
     background-color: red;
 }
 
+#randombutton.alert.button {
+  background-color: red;
+}
+
 .grid-container {
   background: white;
   text-align: center;
@@ -57,6 +61,7 @@ div.recipeCard {
 .recipeArea {
   margin-left: 75px;
   margin-right: 75px;
+}
 
 .hide {
   display: none;
