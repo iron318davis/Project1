@@ -13,7 +13,15 @@ $(document).ready(function () {
       event.preventDefault();
       searchthestuff();
     }
-  });
+  );
+
+
+  $(document).on("click", "#randombutton", function () {
+    event.preventDefault();
+    $("#searchinput").val("")
+    searchthestuff();
+  }
+);
 
   
   function searchthestuff() {
@@ -42,7 +50,7 @@ $(document).ready(function () {
       var values = Object.values(responsearray);
 
 
-      var recipeHead = $("<div class = \"title\">")
+      var recipeHead = $("<div class = 'title'>")
       var recipeTitle = values[1];
       recipeHead.append(recipeTitle);
       $(".recipeArea").append(recipeHead);
