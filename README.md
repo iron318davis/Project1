@@ -45,9 +45,9 @@ Recipe = https://www.themealdb.com/api.php
 
 ### Links to Webpage and Repository:
 
-* Live Website https://iron318davis.github.io/Project1/
+* Live Website https://iron318davis.github.io/RecipeNow/
 
-* Code Repository https://github.com/iron318davis/Project1
+* Code Repository https://github.com/iron318davis/RecipeNow
 
 ### Copyright:
 Vanida Somchaleunsouk, Davis Sjoberg, Thomas Johnson, Jonathan Montreuil
